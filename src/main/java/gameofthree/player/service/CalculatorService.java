@@ -31,22 +31,24 @@ public class CalculatorService {
 
 		log.info("The received number is: " + number);
 
+		int addedNumber = 0;
 		switch (number % 3) {
 		case 1:
-			number -= 1;
+			addedNumber = -1;
 			break;
 		case 2:
-			number += 1;
+			addedNumber = 1;
 			break;
 		}
-
+		number += addedNumber;
+		log.info("The added number is: " + addedNumber);
 		number /= 3;
 
 		log.info("The calculated number is: " + number);
 
 		if (number == 1) {
 			log.info("WIN!!!");
-			gameOver=true;
+			gameOver = true;
 		}
 
 		return number;
