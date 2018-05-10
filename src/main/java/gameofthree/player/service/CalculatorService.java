@@ -28,6 +28,12 @@ public class CalculatorService {
 		if (!gameOn) {
 			gameOn = true;
 		}
+		
+		if (number == 1) {
+			gameOver = true;
+			return number;
+		}
+
 
 		log.info("The received number is: " + number);
 
