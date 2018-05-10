@@ -37,8 +37,7 @@ public class PlayerApplication {
 	public CommandLineRunner run() throws Exception {
 		return args -> {
 			if (!service.isGameOn()) {
-				//number = service.incept(5, 75);
-				number = 56;
+				number = service.incept(5, 75);
 				send();
 			}
 		};
@@ -55,7 +54,7 @@ public class PlayerApplication {
 			number = service.calculate(number);
 		} catch (Exception e) {
 			log.error(e.getMessage());
-		} 
+		}
 
 		if (!service.isGameOver()) {
 			Timer timer = new Timer();
