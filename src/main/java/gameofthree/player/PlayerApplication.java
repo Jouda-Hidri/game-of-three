@@ -21,6 +21,7 @@ public class PlayerApplication {
 	private static final Logger log = LoggerFactory.getLogger(PlayerApplication.class);
 	private static final int PORT1 = 8080;
 	private static final int PORT2 = 8081;
+	private static final int TIME_SPAN = 1000;
 	private int number = 0;
 
 	@Value("${server.port}")
@@ -36,6 +37,7 @@ public class PlayerApplication {
 	@Bean
 	public CommandLineRunner run() throws Exception {
 		return args -> {
+			Thread.sleep(TIME_SPAN);
 			if (!service.isGameOn()) {
 				number = service.incept(5, 75);
 				send();
@@ -63,7 +65,7 @@ public class PlayerApplication {
 				public void run() {
 					send();
 				}
-			}, 1000);
+			}, TIME_SPAN);
 		}
 	}
 }
