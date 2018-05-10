@@ -1,2 +1,0 @@
-2018-05-10 12:19:40,117 ERROR [Worker-3] - System.err - log4j:WARN No appenders could be found for logger (com.gradleware.tooling.toolingutils.distribution.PublishedGradleVersions).
-2018-05-10 12:19:40,121 ERROR [Worker-3] - System.err - log4j:WARN Please initialize the log4j system properly.
